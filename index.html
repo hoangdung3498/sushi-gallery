@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi Gallery</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 80%;
+            max-height: 80%;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #f5a623;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img id="sushiImage" src="sushi1.jpg" alt="Sushi Image">
+    <button onclick="nextImage()">Next</button>
+
+    <script>
+        let currentImageIndex = 1;
+
+        function nextImage() {
+            currentImageIndex++;
+            if (currentImageIndex > 10) {
+                currentImageIndex = 1;
+            }
+            document.getElementById('sushiImage').src = `sushi${currentImageIndex}.jpg`;
+        }
+    </script>
+</body>
+</html>
