@@ -13,10 +13,11 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
         img {
-            max-width: 80%;
-            max-height: 80%;
+            max-width: 400%; /* 5 times larger than 80% */
+            max-height: 400%; /* 5 times larger than 80% */
             margin-bottom: 20px;
         }
         button {
@@ -27,12 +28,75 @@
             border: none;
             border-radius: 5px;
             color: white;
+            margin-bottom: 20px;
+        }
+        #videoContainer {
+            position: relative;
+            width: 80%;
+            margin: 20px auto;
+        }
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .icon {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            animation: float 5s infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+        }
+        .icon1 {
+            top: 50%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .icon2 {
+            top: 60%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+        .icon3 {
+            top: 70%;
+            left: 30%;
+            animation-delay: 2s;
+        }
+        .icon4 {
+            top: 80%;
+            right: 40%;
+            animation-delay: 3s;
+        }
+        .icon5 {
+            top: 90%;
+            left: 50%;
+            animation-delay: 4s;
         }
     </style>
 </head>
 <body>
-    <img id="sushiImage" src="sushi1.jpeg" alt="Sushi Image">
+    <img id="sushiImage" src="sushi1.jpg" alt="Sushi Image">
     <button onclick="nextImage()">Next</button>
+
+    <div id="videoContainer">
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="icon icon1">💖</div>
+        <div class="icon icon2">❤️</div>
+        <div class="icon icon3">💕</div>
+        <div class="icon icon4">💘</div>
+        <div class="icon icon5">💞</div>
+    </div>
 
     <script>
         let currentImageIndex = 1;
@@ -42,7 +106,7 @@
             if (currentImageIndex > 10) {
                 currentImageIndex = 1;
             }
-            document.getElementById('sushiImage').src = `sushi${currentImageIndex}.jpeg`;
+            document.getElementById('sushiImage').src = `sushi${currentImageIndex}.jpg`;
         }
     </script>
 </body>
