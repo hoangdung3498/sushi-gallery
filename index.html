@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    <img id="sushiImage" src="sushi1.jpg" alt="Sushi Image">
+    <img id="sushiImage" src="sushi1.jpeg" alt="Sushi Image">
     <button onclick="nextImage()">Next</button>
 
     <script>
@@ -42,7 +42,7 @@
             if (currentImageIndex > 10) {
                 currentImageIndex = 1;
             }
-            document.getElementById('sushiImage').src = `sushi${currentImageIndex}.jpg`;
+            document.getElementById('sushiImage').src = `sushi${currentImageIndex}.jpeg`;
         }
     </script>
 </body>
